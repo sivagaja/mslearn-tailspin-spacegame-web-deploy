@@ -1,5 +1,5 @@
 trigger:
-- '*'
+- "*"
 
 variables:
   buildConfiguration: 'Release'
@@ -25,7 +25,10 @@ stages:
       displayName: 'Use .NET SDK $(dotnetSdkVersion)'
       inputs:
         version: '$(dotnetSdkVersion)'
-
+    - task: NodeTool@0 
+      inputs:
+        versionSpec: '12.x'
+   
     - task: Npm@1
       displayName: 'Run npm install'
       inputs:
