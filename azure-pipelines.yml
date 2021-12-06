@@ -1,7 +1,4 @@
 trigger:
-  inputs:
-    versionSpec: '6.x'
-
 - "*"
 pool:
   vmImage: 'ubuntu-20.04'
