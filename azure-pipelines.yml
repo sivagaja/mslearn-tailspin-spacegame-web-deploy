@@ -1,12 +1,9 @@
 trigger:
-- task: Npm@1
-  inputs:
-    command: 'install'
-- task: NodeTool@0
+
   inputs:
     versionSpec: '6.x'
     checkLatest: true
-- '*'
+- "*"
 
 pool:
   vmImage: 'ubuntu-20.04'
@@ -19,6 +16,9 @@ variables:
   dotnetSdkVersion: '5.x'
 
 steps:
+- task: NodeTool@0 
+  inputs:
+    versionSpec: '12.x'
 - task: UseDotNet@2
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
   inputs:
